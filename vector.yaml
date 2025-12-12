@@ -1,0 +1,26 @@
+sources:
+  docker:
+    type: docker_logs
+
+sinks:
+  openobserve:
+    type: http
+    inputs:
+      - docker
+    uri: http://openobserve:5080/api/default/docker/_json
+    method: post
+
+    auth:
+      strategy: basic
+      user: root@example.com
+      password: supersecret
+
+    encoding:
+      codec: json
+
+    compression:
+      type: gzip
+
+    healthcheck:
+      enabled: true
+      uri: http://openobserve:5080/healthz
