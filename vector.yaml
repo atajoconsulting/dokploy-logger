@@ -13,11 +13,11 @@ sinks:
     auth:
       strategy: basic
       user: root@example.com
-      password: supersecret
+      password: 1Ym2xdivsfvQ1hJr
 
     encoding:
       codec: json
+      timestamp_format: "rfc3339"
 
     healthcheck:
-      enabled: true
-      uri: http://openobserve:5080/healthz
+      enabled: false
