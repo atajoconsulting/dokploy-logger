@@ -12,7 +12,7 @@ sinks:
 
     auth:
       strategy: basic
-      user: root@example.com
+      user: vector@collector.com
       password: 1Ym2xdivsfvQ1hJr
 
     encoding:
