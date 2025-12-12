@@ -1,6 +1,8 @@
 sources:
   docker:
     type: docker_logs
+    exclude_containers:
+      - openobserve
 
 sinks:
   openobserve:
