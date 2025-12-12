@@ -3,6 +3,8 @@ sources:
     type: docker_logs
     exclude_containers:
       - openobserve
+      - 54f8095531fc
+      - d05311228086f3b891290812084dcdef2c57a95c0d32838d6408b4a4fb141a27
 
 sinks:
   openobserve:
