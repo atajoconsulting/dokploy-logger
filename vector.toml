@@ -3,21 +3,13 @@ type = "docker_logs"
 
 [sinks.openobserve]
 type = "http"
-inputs = ["docker"]
-uri = "http://openobserve:5080/api/default/docker/_json"
+inputs = [ source or transform id ]
+uri = "https://logger.sitedev.es/api/default/default/_json"
 method = "post"
-
-[sinks.openobserve.auth]
-strategy = "basic"
-user = "root@example.com"
-password = "supersecret"
-
-[sinks.openobserve.encoding]
-codec = "json"
-
-[sinks.openobserve.compression]
-type = "gzip"
-
-[sinks.openobserve.healthcheck]
-enabled = true
-uri = "http://openobserve:5080/healthz"
+auth.strategy = "basic"
+auth.user = "root@example.com"
+auth.password = "1Ym2xdivsfvQ1hJr"
+compression = "gzip"
+encoding.codec = "json"
+encoding.timestamp_format = "rfc3339"
+healthcheck.enabled = false
