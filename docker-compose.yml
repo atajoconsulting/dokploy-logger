@@ -1,6 +1,7 @@
 services:
   openobserve:
     image: openobserve/openobserve:latest
+    hostname: openobserve
     # ports:
     #   - "5080:5080"
     volumes:
