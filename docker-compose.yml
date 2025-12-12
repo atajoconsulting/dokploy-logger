@@ -1,0 +1,20 @@
+services:
+  openobserve:
+    image: openobserve/openobserve:latest
+    ports:
+      - "5080:5080"
+    volumes:
+      - openobserve_data:/data
+    restart: unless-stopped
+
+  vector:
+    image: timberio/vector:0.41.1-alpine
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./vector.toml:/etc/vector/vector.toml:ro
+    depends_on:
+      - openobserve
+    restart: unless-stopped
+
+volumes:
+  openobserve_data:
