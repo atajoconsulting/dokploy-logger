@@ -18,9 +18,6 @@ sinks:
     encoding:
       codec: json
 
-    compression:
-      type: gzip
-
     healthcheck:
       enabled: true
       uri: http://openobserve:5080/healthz
