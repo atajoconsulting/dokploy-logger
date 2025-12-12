@@ -6,6 +6,8 @@ services:
     volumes:
       - openobserve_data:/data
     restart: unless-stopped
+    env_file:
+      - .env
 
   vector:
     image: timberio/vector:0.41.1-alpine
