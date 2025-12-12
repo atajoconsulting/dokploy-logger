@@ -7,7 +7,7 @@ sinks:
     type: http
     inputs:
       - docker
-    uri: http://openobserve:5080/api/default/docker/_json
+    uri: http://openobserve:5080/api/default/default/_json
     method: post
 
     auth:
